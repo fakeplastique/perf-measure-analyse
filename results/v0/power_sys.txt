@@ -1,0 +1,1 @@
+v0 reps=22: avg_w=20.889 total_j=208.7 j_per_run=9.485

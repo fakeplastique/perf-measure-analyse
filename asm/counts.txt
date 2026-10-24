@@ -1,0 +1,3 @@
+v0 ymm=0 fma_packed=0 fma_scalar=0 mul_add_scalar=2 insns=71
+v1 ymm=0 fma_packed=0 fma_scalar=1 mul_add_scalar=2 insns=97
+v2 ymm=12 fma_packed=6 fma_scalar=3 mul_add_scalar=0 insns=295

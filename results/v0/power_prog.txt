@@ -1,0 +1,5 @@
+# rows: e_pkg_j e_core_j t_s (REPS=1, N=512, core 2, runs=3); P_idle=2.3506 W
+3.05 3.02 0.483
+3.01 2.72 0.471
+5.42 5.35 0.699
+net_pkg_j mean=2.531 std=1.079 n=3

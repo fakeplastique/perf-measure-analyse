@@ -1,0 +1,204 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 477  of event 'cpu/cycles/P'
+# Event count (approx.): 1899794243
+#
+# Children      Self  Command  Shared Object         Symbol                                   
+# ........  ........  .......  ....................  .........................................
+#
+    99.71%     0.00%  v0       v0                    [.] _start
+            |
+            ---_start
+               __libc_start_main
+               call_init (inlined)
+               0x7ff440c27781
+               main
+               |          
+               |--98.02%--matmul
+               |          
+                --1.48%--blur3x3
+
+    99.71%     0.00%  v0       libc.so.6             [.] __libc_start_main
+            |
+            ---__libc_start_main
+               call_init (inlined)
+               0x7ff440c27781
+               main
+               |          
+               |--98.02%--matmul
+               |          
+                --1.48%--blur3x3
+
+    99.71%     0.00%  v0       libc.so.6             [.] call_init (inlined)
+            |
+            ---call_init (inlined)
+               0x7ff440c27781
+               main
+               |          
+               |--98.02%--matmul
+               |          
+                --1.48%--blur3x3
+
+    99.71%     0.00%  v0       libc.so.6             [.] 0x00007ff440c27781
+            |
+            ---0x7ff440c27781
+               main
+               |          
+               |--98.02%--matmul
+               |          
+                --1.48%--blur3x3
+
+    99.71%     0.00%  v0       v0                    [.] main
+            |
+            ---main
+               |          
+               |--98.02%--matmul
+               |          
+                --1.48%--blur3x3
+
+    98.02%    97.81%  v0       v0                    [.] matmul
+            |          
+             --97.81%--_start
+                       __libc_start_main
+                       call_init (inlined)
+                       0x7ff440c27781
+                       main
+                       matmul
+
+     1.48%     1.27%  v0       v0                    [.] blur3x3
+            |          
+             --1.27%--_start
+                       __libc_start_main
+                       call_init (inlined)
+                       0x7ff440c27781
+                       main
+                       blur3x3
+
+     0.75%     0.00%  v0       [kernel.kallsyms]     [.] asm_exc_page_fault
+            |
+            ---asm_exc_page_fault
+               |          
+                --0.54%--exc_page_fault
+                          do_user_addr_fault
+                          handle_mm_fault
+                          __handle_mm_fault
+
+     0.54%     0.00%  v0       [kernel.kallsyms]     [.] exc_page_fault
+            |
+            ---exc_page_fault
+               do_user_addr_fault
+               handle_mm_fault
+               __handle_mm_fault
+
+     0.54%     0.00%  v0       [kernel.kallsyms]     [.] do_user_addr_fault
+            |
+            ---do_user_addr_fault
+               handle_mm_fault
+               __handle_mm_fault
+
+     0.54%     0.00%  v0       [kernel.kallsyms]     [.] handle_mm_fault
+            |
+            ---handle_mm_fault
+               __handle_mm_fault
+
+     0.54%     0.00%  v0       [kernel.kallsyms]     [.] __handle_mm_fault
+            |
+            ---__handle_mm_fault
+
+     0.42%     0.00%  v0       [kernel.kallsyms]     [.] do_anonymous_page
+     0.21%     0.21%  v0       [kernel.kallsyms]     [k] clear_highpages_kasan_tagged
+     0.21%     0.00%  v0       [kernel.kallsyms]     [.] pte_offset_map_lock
+     0.21%     0.21%  v0       [kernel.kallsyms]     [k] map_anon_folio_pte_nopf
+     0.21%     0.00%  v0       [kernel.kallsyms]     [.] folio_add_lru
+     0.21%     0.00%  v0       [kernel.kallsyms]     [.] folio_mark_accessed
+     0.21%     0.21%  v0       v0                    [.] checksum
+     0.21%     0.00%  v0       [kernel.kallsyms]     [.] sync_regs
+     0.14%     0.14%  taskset  [kernel.kallsyms]     [k] exc_page_fault
+     0.14%     0.00%  taskset  ld-linux-x86-64.so.2  [.] 0x00007efeaafd97e8
+     0.14%     0.00%  taskset  ld-linux-x86-64.so.2  [.] 0x00007efeaafdaa61
+     0.14%     0.00%  taskset  ld-linux-x86-64.so.2  [.] 0x00007efeaafd9260
+     0.14%     0.00%  taskset  ld-linux-x86-64.so.2  [.] 0x00007efeaafdcafd
+     0.14%     0.00%  taskset  libc.so.6             [.] getrlimit
+     0.12%     0.12%  v0       [kernel.kallsyms]     [k] set_pte_range
+     0.12%     0.00%  v0       ld-linux-x86-64.so.2  [.] 0x00007ff440e7d7e8
+     0.12%     0.00%  v0       ld-linux-x86-64.so.2  [.] 0x00007ff440e7ea61
+     0.12%     0.00%  v0       ld-linux-x86-64.so.2  [.] 0x00007ff440e7d260
+     0.12%     0.00%  v0       ld-linux-x86-64.so.2  [.] 0x00007ff440e80afd
+     0.12%     0.00%  v0       libc.so.6             [.] 0x00007ff440c9ad60
+     0.12%     0.00%  v0       [kernel.kallsyms]     [.] do_fault
+     0.12%     0.00%  v0       [kernel.kallsyms]     [.] filemap_map_pages
+     0.03%     0.00%  taskset  [kernel.kallsyms]     [.] entry_SYSCALL_64_after_hwframe
+     0.03%     0.00%  taskset  [kernel.kallsyms]     [.] do_syscall_64
+     0.03%     0.00%  taskset  [kernel.kallsyms]     [.] __x64_sys_execve
+     0.03%     0.00%  taskset  [kernel.kallsyms]     [.] do_execveat_common.isra.0
+     0.02%     0.00%  taskset  [kernel.kallsyms]     [k] __zap_vma_range
+     0.02%     0.00%  taskset  [unknown]             [k] 0x00007f208d6e6e0b
+     0.02%     0.00%  taskset  [kernel.kallsyms]     [.] bprm_execve
+     0.02%     0.00%  taskset  [kernel.kallsyms]     [.] load_elf_binary
+     0.02%     0.00%  taskset  [kernel.kallsyms]     [.] setup_new_exec
+     0.02%     0.00%  taskset  [kernel.kallsyms]     [.] __mmput
+     0.02%     0.00%  taskset  [kernel.kallsyms]     [.] exit_mmap
+     0.02%     0.00%  taskset  [kernel.kallsyms]     [.] unmap_vmas
+     0.02%     0.02%  taskset  [kernel.kallsyms]     [k] vm_normal_page
+     0.00%     0.00%  taskset  taskset               [.] 0x0000560779125cd5
+     0.00%     0.00%  taskset  libc.so.6             [.] __libc_start_main
+     0.00%     0.00%  taskset  libc.so.6             [.] call_init (inlined)
+     0.00%     0.00%  taskset  libc.so.6             [.] 0x00007efeaac27781
+     0.00%     0.00%  taskset  [kernel.kallsyms]     [k] _find_next_bit
+     0.00%     0.00%  taskset  taskset               [.] 0x00005607791259b9
+     0.00%     0.00%  taskset  libc.so.6             [.] execvpe
+     0.00%     0.00%  taskset  libc.so.6             [.] execve
+     0.00%     0.00%  taskset  [kernel.kallsyms]     [.] alloc_bprm
+     0.00%     0.00%  taskset  [kernel.kallsyms]     [.] mm_init
+     0.00%     0.00%  taskset  [kernel.kallsyms]     [.] __percpu_counter_init_many
+     0.00%     0.00%  taskset  [kernel.kallsyms]     [.] pcpu_alloc_noprof
+     0.00%     0.00%  taskset  [kernel.kallsyms]     [.] memset_orig
+     0.00%     0.00%  taskset  [kernel.kallsyms]     [.] pte_offset_map_lock
+     0.00%     0.00%  taskset  taskset               [.] 0x0000560779125975
+     0.00%     0.00%  taskset  libc.so.6             [.] sched_setaffinity
+     0.00%     0.00%  taskset  [kernel.kallsyms]     [.] __x64_sys_sched_setaffinity
+     0.00%     0.00%  taskset  [kernel.kallsyms]     [.] sched_setaffinity
+     0.00%     0.00%  taskset  [kernel.kallsyms]     [.] __sched_setaffinity
+     0.00%     0.00%  taskset  [kernel.kallsyms]     [.] __set_cpus_allowed_ptr
+     0.00%     0.00%  taskset  [kernel.kallsyms]     [.] affine_move_task
+     0.00%     0.00%  taskset  [kernel.kallsyms]     [k] __rcu_read_unlock
+     0.00%     0.00%  taskset  [kernel.kallsyms]     [.] wake_up_var
+     0.00%     0.00%  perf-ex  [unknown]             [k] 0x00007f208d6e6e0b
+     0.00%     0.00%  perf-ex  [kernel.kallsyms]     [.] entry_SYSCALL_64_after_hwframe
+     0.00%     0.00%  perf-ex  [kernel.kallsyms]     [.] do_syscall_64
+     0.00%     0.00%  perf-ex  [kernel.kallsyms]     [.] __x64_sys_execve
+     0.00%     0.00%  perf-ex  [kernel.kallsyms]     [.] do_execveat_common.isra.0
+     0.00%     0.00%  perf-ex  [kernel.kallsyms]     [.] bprm_execve
+     0.00%     0.00%  perf-ex  [kernel.kallsyms]     [.] load_elf_binary
+     0.00%     0.00%  perf-ex  [kernel.kallsyms]     [.] begin_new_exec
+     0.00%     0.00%  perf-ex  [kernel.kallsyms]     [.] perf_event_exec
+     0.00%     0.00%  perf-ex  [kernel.kallsyms]     [.] ctx_resched
+     0.00%     0.00%  perf-ex  [kernel.kallsyms]     [.] ctx_sched_in
+     0.00%     0.00%  perf-ex  [kernel.kallsyms]     [.] visit_groups_merge.constprop.0.isra.0
+     0.00%     0.00%  perf-ex  [kernel.kallsyms]     [.] merge_sched_in
+     0.00%     0.00%  perf-ex  [kernel.kallsyms]     [k] nmi_restore
+     0.00%     0.00%  taskset  [kernel.kallsyms]     [k] perf_event_update_userpage
+     0.00%     0.00%  perf-ex  [kernel.kallsyms]     [.] perf_event_update_userpage
+     0.00%     0.00%  taskset  [kernel.kallsyms]     [.] preempt_schedule_thunk
+     0.00%     0.00%  taskset  [kernel.kallsyms]     [.] preempt_schedule
+     0.00%     0.00%  taskset  [kernel.kallsyms]     [.] __schedule
+     0.00%     0.00%  taskset  [kernel.kallsyms]     [.] finish_task_switch.isra.0
+     0.00%     0.00%  taskset  [kernel.kallsyms]     [.] __perf_event_task_sched_in
+     0.00%     0.00%  taskset  [kernel.kallsyms]     [.] ctx_sched_in
+     0.00%     0.00%  taskset  [kernel.kallsyms]     [.] visit_groups_merge.constprop.0.isra.0
+     0.00%     0.00%  taskset  [kernel.kallsyms]     [.] merge_sched_in
+     0.00%     0.00%  perf-ex  [kernel.kallsyms]     [.] event_sched_in
+     0.00%     0.00%  taskset  [kernel.kallsyms]     [.] event_sched_in
+     0.00%     0.00%  perf-ex  [kernel.kallsyms]     [.] perf_ibs_add
+     0.00%     0.00%  taskset  [kernel.kallsyms]     [.] perf_ibs_add
+     0.00%     0.00%  taskset  [kernel.kallsyms]     [k] native_sched_clock
+     0.00%     0.00%  perf-ex  [kernel.kallsyms]     [k] __rcu_read_lock
+     0.00%     0.00%  perf-ex  [kernel.kallsyms]     [k] native_write_msr
+
+
+#
+# (Tip: If call chains don't work try perf record --call-graph dwarf or --call-graph lbr)
+#

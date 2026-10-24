@@ -1,0 +1,28 @@
+# started on Sat Oct 24 23:39:41 2026
+
+
+ Performance counter stats for 'build/v0 512' (3 runs):
+
+                 9      context-switches                 #     15.4 cs/sec  cs_per_second       ( +- 28.93% )
+                 0      cpu-migrations                   #      0.0 migrations/sec  migrations_per_second
+             1,783      page-faults                      #   3060.7 faults/sec  page_faults_per_second  ( +-  9.46% )
+            582.55 msec task-clock                       #      nan CPUs  CPUs_utilized         ( +-  6.85% )
+       136,770,855      L1-dcache-load-misses            #      6.6 %  l1d_miss_rate            ( +-  0.59% )  (42.85%)
+           669,554      branch-misses                    #      0.5 %  branch_miss_rate         ( +-  4.99% )  (42.94%)
+       145,628,521      branches                         #    250.0 M/sec  branch_frequency     ( +-  0.24% )  (42.93%)
+     2,326,768,489      cpu-cycles                       #      4.0 GHz  cycles_frequency       ( +-  6.71% )  (42.89%)
+     4,415,994,929      instructions                     #      1.9 instructions  insn_per_cycle  ( +-  0.79% )  (42.79%)
+        30,799,602      stalled-cycles-frontend          #     0.01 frontend_cycles_idle        ( +- 17.86% )  (42.81%)
+
+       0.583841909 +- 0.039921360 seconds time elapsed  ( +-  6.84% )
+
+# started on Sat Oct 24 23:39:42 2026
+
+
+ Performance counter stats for 'build/v0 512' (3 runs):
+
+           817,309      l2_cache_req_stat.ic_dc_hit_in_l2                                        ( +-  2.43% )
+       137,063,523      l2_cache_req_stat.ic_dc_miss_in_l2                                        ( +-  0.01% )
+
+       0.479412279 +- 0.003868666 seconds time elapsed  ( +-  0.81% )
+

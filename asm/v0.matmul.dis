@@ -1,0 +1,72 @@
+000000000000129d <matmul>:
+    129d:	push   %rbp
+    129e:	mov    %rsp,%rbp
+    12a1:	mov    %rdi,-0x28(%rbp)
+    12a5:	mov    %rsi,-0x30(%rbp)
+    12a9:	mov    %rdx,-0x38(%rbp)
+    12ad:	mov    %ecx,-0x3c(%rbp)
+    12b0:	movl   $0x0,-0x14(%rbp)
+    12b7:	jmp    138f <matmul+0xf2>
+    12bc:	movl   $0x0,-0x10(%rbp)
+    12c3:	jmp    137f <matmul+0xe2>
+    12c8:	pxor   %xmm0,%xmm0
+    12cc:	movsd  %xmm0,-0x8(%rbp)
+    12d1:	movl   $0x0,-0xc(%rbp)
+    12d8:	jmp    1344 <matmul+0xa7>
+    12da:	mov    -0x14(%rbp),%eax
+    12dd:	movslq %eax,%rdx
+    12e0:	mov    -0x3c(%rbp),%eax
+    12e3:	cltq
+    12e5:	imul   %rax,%rdx
+    12e9:	mov    -0xc(%rbp),%eax
+    12ec:	cltq
+    12ee:	add    %rdx,%rax
+    12f1:	lea    0x0(,%rax,8),%rdx
+    12f9:	mov    -0x28(%rbp),%rax
+    12fd:	add    %rdx,%rax
+    1300:	movsd  (%rax),%xmm1
+    1304:	mov    -0xc(%rbp),%eax
+    1307:	movslq %eax,%rdx
+    130a:	mov    -0x3c(%rbp),%eax
+    130d:	cltq
+    130f:	imul   %rax,%rdx
+    1313:	mov    -0x10(%rbp),%eax
+    1316:	cltq
+    1318:	add    %rdx,%rax
+    131b:	lea    0x0(,%rax,8),%rdx
+    1323:	mov    -0x30(%rbp),%rax
+    1327:	add    %rdx,%rax
+    132a:	movsd  (%rax),%xmm0
+    132e:	mulsd  %xmm1,%xmm0
+    1332:	movsd  -0x8(%rbp),%xmm1
+    1337:	addsd  %xmm1,%xmm0
+    133b:	movsd  %xmm0,-0x8(%rbp)
+    1340:	addl   $0x1,-0xc(%rbp)
+    1344:	mov    -0xc(%rbp),%eax
+    1347:	cmp    -0x3c(%rbp),%eax
+    134a:	jl     12da <matmul+0x3d>
+    134c:	mov    -0x14(%rbp),%eax
+    134f:	movslq %eax,%rdx
+    1352:	mov    -0x3c(%rbp),%eax
+    1355:	cltq
+    1357:	imul   %rax,%rdx
+    135b:	mov    -0x10(%rbp),%eax
+    135e:	cltq
+    1360:	add    %rdx,%rax
+    1363:	lea    0x0(,%rax,8),%rdx
+    136b:	mov    -0x38(%rbp),%rax
+    136f:	add    %rdx,%rax
+    1372:	movsd  -0x8(%rbp),%xmm0
+    1377:	movsd  %xmm0,(%rax)
+    137b:	addl   $0x1,-0x10(%rbp)
+    137f:	mov    -0x10(%rbp),%eax
+    1382:	cmp    -0x3c(%rbp),%eax
+    1385:	jl     12c8 <matmul+0x2b>
+    138b:	addl   $0x1,-0x14(%rbp)
+    138f:	mov    -0x14(%rbp),%eax
+    1392:	cmp    -0x3c(%rbp),%eax
+    1395:	jl     12bc <matmul+0x1f>
+    139b:	nop
+    139c:	nop
+    139d:	pop    %rbp
+    139e:	ret

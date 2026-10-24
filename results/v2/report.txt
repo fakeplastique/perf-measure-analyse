@@ -1,0 +1,335 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 2K of event 'cpu/cycles/P'
+# Event count (approx.): 8724274420
+#
+# Children      Self  Command  Shared Object      Symbol                                   
+# ........  ........  .......  .................  .........................................
+#
+    99.96%     0.00%  v2       v2                 [.] _start
+            |
+            ---_start
+               __libc_start_main
+               call_init (inlined)
+               0x7f15f0427781
+               |          
+                --99.85%--main
+                          |          
+                          |--96.43%--matmul
+                          |          |          
+                          |           --36.59%--imin (inlined)
+                          |          
+                          |--1.08%--blur3x3
+                          |          
+                           --0.59%--0x7f15f05765c6
+
+    99.96%     0.00%  v2       libc.so.6          [.] __libc_start_main
+            |
+            ---__libc_start_main
+               call_init (inlined)
+               0x7f15f0427781
+               |          
+                --99.85%--main
+                          |          
+                          |--96.43%--matmul
+                          |          |          
+                          |           --36.59%--imin (inlined)
+                          |          
+                          |--1.08%--blur3x3
+                          |          
+                           --0.59%--0x7f15f05765c6
+
+    99.96%     0.00%  v2       libc.so.6          [.] call_init (inlined)
+            |
+            ---call_init (inlined)
+               0x7f15f0427781
+               |          
+                --99.85%--main
+                          |          
+                          |--96.43%--matmul
+                          |          |          
+                          |           --36.59%--imin (inlined)
+                          |          
+                          |--1.08%--blur3x3
+                          |          
+                           --0.59%--0x7f15f05765c6
+
+    99.96%     0.00%  v2       libc.so.6          [.] 0x00007f15f0427781
+            |
+            ---0x7f15f0427781
+               |          
+                --99.85%--main
+                          |          
+                          |--96.43%--matmul
+                          |          |          
+                          |           --36.59%--imin (inlined)
+                          |          
+                          |--1.08%--blur3x3
+                          |          
+                           --0.59%--0x7f15f05765c6
+
+    99.85%     0.00%  v2       v2                 [.] main
+            |
+            ---main
+               |          
+               |--96.43%--matmul
+               |          |          
+               |           --36.59%--imin (inlined)
+               |          
+               |--1.08%--blur3x3
+               |          
+                --0.59%--0x7f15f05765c6
+
+    96.43%    95.61%  v2       v2                 [.] matmul
+            |          
+            |--95.61%--_start
+            |          __libc_start_main
+            |          call_init (inlined)
+            |          0x7f15f0427781
+            |          main
+            |          matmul
+            |          |          
+            |           --36.31%--imin (inlined)
+            |          
+             --0.81%--matmul
+
+    36.59%     0.00%  v2       v2                 [.] imin (inlined)
+            |
+            ---imin (inlined)
+
+     1.13%     1.08%  v2       v2                 [.] blur3x3
+            |          
+             --1.08%--_start
+                       __libc_start_main
+                       call_init (inlined)
+                       0x7f15f0427781
+                       main
+                       |          
+                        --1.04%--blur3x3
+
+     0.82%     0.05%  v2       [kernel.kallsyms]  [.] asm_sysvec_apic_timer_interrupt
+            |          
+             --0.77%--asm_sysvec_apic_timer_interrupt
+                       |          
+                        --0.68%--sysvec_apic_timer_interrupt
+                                  __sysvec_apic_timer_interrupt
+                                  hrtimer_interrupt
+                                  |          
+                                   --0.64%--__hrtimer_run_queues
+                                             tick_nohz_handler
+
+     0.73%     0.00%  v2       [kernel.kallsyms]  [.] sysvec_apic_timer_interrupt
+            |
+            ---sysvec_apic_timer_interrupt
+               __sysvec_apic_timer_interrupt
+               hrtimer_interrupt
+               |          
+                --0.64%--__hrtimer_run_queues
+                          tick_nohz_handler
+
+     0.73%     0.00%  v2       [kernel.kallsyms]  [.] __sysvec_apic_timer_interrupt
+            |
+            ---__sysvec_apic_timer_interrupt
+               hrtimer_interrupt
+               |          
+                --0.64%--__hrtimer_run_queues
+                          tick_nohz_handler
+
+     0.73%     0.00%  v2       [kernel.kallsyms]  [.] hrtimer_interrupt
+            |
+            ---hrtimer_interrupt
+               |          
+                --0.64%--__hrtimer_run_queues
+                          tick_nohz_handler
+
+     0.64%     0.00%  v2       [kernel.kallsyms]  [.] __hrtimer_run_queues
+            |
+            ---__hrtimer_run_queues
+               tick_nohz_handler
+
+     0.64%     0.00%  v2       [kernel.kallsyms]  [.] tick_nohz_handler
+            |
+            ---tick_nohz_handler
+
+     0.59%     0.00%  v2       libc.so.6          [.] 0x00007f15f05765c6
+            |
+            ---0x7f15f05765c6
+
+     0.46%     0.00%  v2       [kernel.kallsyms]  [.] update_process_times
+     0.45%     0.00%  v2       libc.so.6          [.] 0x00007f15f05765bc
+     0.41%     0.00%  v2       libc.so.6          [.] 0x00007f15f05765af
+     0.36%     0.36%  v2       libc.so.6          [.] 0x00000000001765c6
+     0.31%     0.00%  v2       libc.so.6          [.] 0x00007f15f0576e0e
+     0.27%     0.00%  v2       [kernel.kallsyms]  [.] sched_tick
+     0.23%     0.23%  v2       libc.so.6          [.] 0x00000000001765c1
+     0.23%     0.00%  v2       libc.so.6          [.] 0x00007f15f0576e04
+     0.18%     0.00%  v2       [kernel.kallsyms]  [.] task_tick_fair
+     0.18%     0.00%  v2       [kernel.kallsyms]  [.] asm_exc_page_fault
+     0.18%     0.18%  v2       libc.so.6          [.] 0x00000000001765af
+     0.18%     0.00%  v2       [kernel.kallsyms]  [.] update_wall_time
+     0.18%     0.00%  v2       [kernel.kallsyms]  [.] __timekeeping_advance
+     0.18%     0.00%  v2       [kernel.kallsyms]  [.] timekeeping_update_from_shadow
+     0.18%     0.18%  v2       libc.so.6          [.] 0x00000000001765ca
+     0.14%     0.14%  v2       libc.so.6          [.] 0x00000000001765b3
+     0.14%     0.14%  v2       libc.so.6          [.] 0x00000000001765aa
+     0.14%     0.00%  v2       libc.so.6          [.] 0x00007f15f05765a5
+     0.14%     0.14%  v2       libc.so.6          [.] 0x0000000000176e17
+     0.14%     0.09%  v2       [kernel.kallsyms]  [.] update_curr
+     0.14%     0.14%  v2       libc.so.6          [.] 0x00000000001765a5
+     0.14%     0.14%  v2       libc.so.6          [.] 0x0000000000176e04
+     0.13%     0.13%  v2       libc.so.6          [.] 0x00000000001765bc
+     0.13%     0.13%  v2       libc.so.6          [.] 0x0000000000176e00
+     0.11%     0.05%  v2       [kernel.kallsyms]  [.] handle_mm_fault
+     0.10%     0.00%  v2       [kernel.kallsyms]  [.] exc_page_fault
+     0.10%     0.00%  v2       [kernel.kallsyms]  [.] do_user_addr_fault
+     0.09%     0.09%  v2       libc.so.6          [.] 0x0000000000176e13
+     0.09%     0.05%  v2       [kernel.kallsyms]  [k] perf_adjust_freq_unthr_events
+     0.09%     0.09%  v2       [kernel.kallsyms]  [k] perf_adjust_freq_unthr_context
+     0.09%     0.00%  v2       [kernel.kallsyms]  [.] perf_event_task_tick
+     0.09%     0.00%  v2       [kernel.kallsyms]  [.] sched_balance_trigger
+     0.09%     0.09%  v2       libc.so.6          [.] 0x00000000001765b7
+     0.09%     0.04%  v2       [kernel.kallsyms]  [k] task_work_run
+     0.09%     0.00%  v2       [kernel.kallsyms]  [.] irqentry_exit
+     0.09%     0.00%  v2       [kernel.kallsyms]  [.] ktime_get_update_offsets_now
+     0.09%     0.05%  v2       [kernel.kallsyms]  [k] memcpy_orig
+     0.09%     0.09%  v2       [kvm]              [k] 0x0000000000027a49
+     0.09%     0.05%  v2       [kernel.kallsyms]  [.] sched_clock
+     0.07%     0.00%  v2       libc.so.6          [.] 0x00007f15f0576e00
+     0.06%     0.04%  v2       v2                 [.] gen_data
+     0.06%     0.00%  v2       [kernel.kallsyms]  [.] __handle_mm_fault
+     0.05%     0.05%  v2       [kernel.kallsyms]  [k] __update_load_avg_se
+     0.05%     0.00%  v2       libc.so.6          [.] 0x00007f15f0576d84
+     0.05%     0.00%  v2       libc.so.6          [.] 0x00007f15f05765b7
+     0.05%     0.00%  v2       [kernel.kallsyms]  [.] update_se
+     0.05%     0.05%  v2       [kernel.kallsyms]  [k] rcu_core
+     0.05%     0.00%  v2       [kernel.kallsyms]  [.] update_cfs_group
+     0.05%     0.05%  v2       [kernel.kallsyms]  [k] psi_account_irqtime
+     0.05%     0.05%  v2       [kernel.kallsyms]  [k] sched_clock_stable
+     0.05%     0.05%  v2       v2                 [.] checksum
+     0.05%     0.00%  v2       [kernel.kallsyms]  [.] account_process_tick
+     0.05%     0.05%  v2       libc.so.6          [.] 0x0000000000176e09
+     0.05%     0.05%  v2       [kernel.kallsyms]  [k] notifier_call_chain
+     0.05%     0.00%  v2       [kernel.kallsyms]  [.] update_fast_timekeeper
+     0.04%     0.00%  v2       libc.so.6          [.] 0x00007f15f0576e13
+     0.04%     0.00%  v2       [kernel.kallsyms]  [.] task_cache_work
+     0.04%     0.00%  v2       [kernel.kallsyms]  [.] __rcu_read_lock
+     0.04%     0.04%  v2       [kernel.kallsyms]  [k] update_vsyscall
+     0.04%     0.00%  v2       [kernel.kallsyms]  [.] raw_notifier_call_chain
+     0.04%     0.04%  v2       [kernel.kallsyms]  [k] rcu_sched_clock_irq
+     0.04%     0.00%  v2       [kernel.kallsyms]  [.] rcu_segcblist_ready_cbs
+     0.04%     0.04%  v2       [kernel.kallsyms]  [k] native_sched_clock
+     0.04%     0.00%  v2       [kernel.kallsyms]  [.] asm_sysvec_call_function
+     0.04%     0.00%  v2       [kernel.kallsyms]  [.] sysvec_call_function
+     0.04%     0.00%  v2       [kernel.kallsyms]  [.] irqtime_account_irq
+     0.04%     0.00%  v2       [kernel.kallsyms]  [.] sched_clock_cpu
+     0.04%     0.04%  v2       libc.so.6          [.] 0x0000000000176e0e
+     0.04%     0.04%  v2       [kernel.kallsyms]  [k] get_mem_cgroup_from_mm
+     0.04%     0.00%  v2       [kernel.kallsyms]  [.] do_anonymous_page
+     0.04%     0.00%  v2       [kernel.kallsyms]  [.] map_anon_folio_pte_nopf
+     0.04%     0.00%  v2       [kernel.kallsyms]  [.] folio_add_new_anon_rmap
+     0.04%     0.00%  v2       [kernel.kallsyms]  [.] __folio_mod_stat
+     0.04%     0.00%  v2       [kernel.kallsyms]  [.] lruvec_stat_mod_folio
+     0.04%     0.04%  v2       [kernel.kallsyms]  [k] native_irq_return_iret
+     0.03%     0.00%  taskset  taskset            [.] 0x0000557e26584cd5
+     0.03%     0.00%  taskset  libc.so.6          [.] __libc_start_main
+     0.03%     0.00%  taskset  libc.so.6          [.] call_init (inlined)
+     0.03%     0.00%  taskset  libc.so.6          [.] 0x00007ff715a27781
+     0.03%     0.03%  taskset  [kernel.kallsyms]  [k] get_page_from_freelist
+     0.03%     0.00%  taskset  taskset            [.] 0x0000557e265840a4
+     0.03%     0.00%  taskset  libc.so.6          [.] setlocale
+     0.03%     0.00%  taskset  libc.so.6          [.] __GI_setlocale (inlined)
+     0.03%     0.00%  taskset  libc.so.6          [.] 0x00007ff715a32abd
+     0.03%     0.00%  taskset  libc.so.6          [.] 0x00007ff715a3373d
+     0.03%     0.00%  taskset  [kernel.kallsyms]  [.] asm_exc_page_fault
+     0.03%     0.00%  taskset  [kernel.kallsyms]  [.] exc_page_fault
+     0.03%     0.00%  taskset  [kernel.kallsyms]  [.] do_user_addr_fault
+     0.03%     0.00%  taskset  [kernel.kallsyms]  [.] handle_mm_fault
+     0.03%     0.00%  taskset  [kernel.kallsyms]  [.] __handle_mm_fault
+     0.03%     0.00%  taskset  [kernel.kallsyms]  [.] do_fault
+     0.03%     0.03%  v2       [kernel.kallsyms]  [k] clear_highpages_kasan_tagged
+     0.03%     0.00%  v2       [kernel.kallsyms]  [.] do_huge_pmd_anonymous_page
+     0.03%     0.00%  v2       [kernel.kallsyms]  [.] vma_alloc_anon_folio_pmd
+     0.03%     0.00%  v2       [kernel.kallsyms]  [.] vma_alloc_folio_noprof
+     0.03%     0.00%  v2       [kernel.kallsyms]  [.] alloc_pages_mpol
+     0.03%     0.00%  v2       [kernel.kallsyms]  [.] __alloc_frozen_pages_noprof
+     0.03%     0.00%  v2       [kernel.kallsyms]  [.] get_page_from_freelist
+     0.01%     0.00%  taskset  [kernel.kallsyms]  [.] entry_SYSCALL_64_after_hwframe
+     0.01%     0.00%  taskset  [kernel.kallsyms]  [.] do_syscall_64
+     0.01%     0.00%  taskset  [kernel.kallsyms]  [.] __x64_sys_execve
+     0.01%     0.00%  taskset  [kernel.kallsyms]  [.] do_execveat_common.isra.0
+     0.00%     0.00%  taskset  [kernel.kallsyms]  [k] __zap_vma_range
+     0.00%     0.00%  taskset  [unknown]          [k] 0x00007f33560e6e0b
+     0.00%     0.00%  taskset  [kernel.kallsyms]  [.] bprm_execve
+     0.00%     0.00%  taskset  [kernel.kallsyms]  [.] load_elf_binary
+     0.00%     0.00%  taskset  [kernel.kallsyms]  [.] setup_new_exec
+     0.00%     0.00%  taskset  [kernel.kallsyms]  [.] __mmput
+     0.00%     0.00%  taskset  [kernel.kallsyms]  [.] exit_mmap
+     0.00%     0.00%  taskset  [kernel.kallsyms]  [.] unmap_vmas
+     0.00%     0.00%  taskset  [kernel.kallsyms]  [k] vm_normal_page
+     0.00%     0.00%  v2       [kernel.kallsyms]  [k] __pte_offset_map
+     0.00%     0.00%  v2       libc.so.6          [.] execve
+     0.00%     0.00%  v2       [kernel.kallsyms]  [.] entry_SYSCALL_64_after_hwframe
+     0.00%     0.00%  v2       [kernel.kallsyms]  [.] do_syscall_64
+     0.00%     0.00%  v2       [kernel.kallsyms]  [.] __x64_sys_execve
+     0.00%     0.00%  v2       [kernel.kallsyms]  [.] do_execveat_common.isra.0
+     0.00%     0.00%  v2       [kernel.kallsyms]  [.] bprm_execve
+     0.00%     0.00%  v2       [kernel.kallsyms]  [.] load_elf_binary
+     0.00%     0.00%  v2       [kernel.kallsyms]  [.] setup_new_exec
+     0.00%     0.00%  v2       [kernel.kallsyms]  [.] __mmput
+     0.00%     0.00%  v2       [kernel.kallsyms]  [.] exit_mmap
+     0.00%     0.00%  v2       [kernel.kallsyms]  [.] unmap_vmas
+     0.00%     0.00%  v2       [kernel.kallsyms]  [.] __zap_vma_range
+     0.00%     0.00%  taskset  [kernel.kallsyms]  [k] alloc_empty_file
+     0.00%     0.00%  taskset  taskset            [.] 0x0000557e265849b9
+     0.00%     0.00%  taskset  libc.so.6          [.] execvpe
+     0.00%     0.00%  taskset  libc.so.6          [.] execve
+     0.00%     0.00%  taskset  [kernel.kallsyms]  [.] alloc_bprm
+     0.00%     0.00%  taskset  [kernel.kallsyms]  [.] do_open_execat
+     0.00%     0.00%  taskset  [kernel.kallsyms]  [.] do_file_open
+     0.00%     0.00%  taskset  [kernel.kallsyms]  [.] path_openat
+     0.00%     0.00%  taskset  [kernel.kallsyms]  [.] kmem_cache_alloc_noprof
+     0.00%     0.00%  perf-ex  [kernel.kallsyms]  [k] perf_event_update_userpage
+     0.00%     0.00%  perf-ex  [unknown]          [k] 0x00007f33560e6e0b
+     0.00%     0.00%  perf-ex  [kernel.kallsyms]  [.] entry_SYSCALL_64_after_hwframe
+     0.00%     0.00%  perf-ex  [kernel.kallsyms]  [.] do_syscall_64
+     0.00%     0.00%  perf-ex  [kernel.kallsyms]  [.] __x64_sys_execve
+     0.00%     0.00%  perf-ex  [kernel.kallsyms]  [.] do_execveat_common.isra.0
+     0.00%     0.00%  perf-ex  [kernel.kallsyms]  [.] bprm_execve
+     0.00%     0.00%  perf-ex  [kernel.kallsyms]  [.] load_elf_binary
+     0.00%     0.00%  perf-ex  [kernel.kallsyms]  [.] begin_new_exec
+     0.00%     0.00%  perf-ex  [kernel.kallsyms]  [.] perf_event_exec
+     0.00%     0.00%  perf-ex  [kernel.kallsyms]  [.] ctx_resched
+     0.00%     0.00%  perf-ex  [kernel.kallsyms]  [.] ctx_sched_in
+     0.00%     0.00%  perf-ex  [kernel.kallsyms]  [.] visit_groups_merge.constprop.0.isra.0
+     0.00%     0.00%  perf-ex  [kernel.kallsyms]  [.] merge_sched_in
+     0.00%     0.00%  taskset  taskset            [.] 0x0000557e26584975
+     0.00%     0.00%  taskset  libc.so.6          [.] sched_setaffinity
+     0.00%     0.00%  taskset  [kernel.kallsyms]  [.] __x64_sys_sched_setaffinity
+     0.00%     0.00%  taskset  [kernel.kallsyms]  [.] sched_setaffinity
+     0.00%     0.00%  taskset  [kernel.kallsyms]  [.] __sched_setaffinity
+     0.00%     0.00%  taskset  [kernel.kallsyms]  [.] __set_cpus_allowed_ptr
+     0.00%     0.00%  taskset  [kernel.kallsyms]  [.] affine_move_task
+     0.00%     0.00%  taskset  [kernel.kallsyms]  [.] preempt_schedule_thunk
+     0.00%     0.00%  taskset  [kernel.kallsyms]  [.] preempt_schedule
+     0.00%     0.00%  taskset  [kernel.kallsyms]  [.] __schedule
+     0.00%     0.00%  taskset  [kernel.kallsyms]  [.] finish_task_switch.isra.0
+     0.00%     0.00%  taskset  [kernel.kallsyms]  [.] __perf_event_task_sched_in
+     0.00%     0.00%  taskset  [kernel.kallsyms]  [.] ctx_sched_in
+     0.00%     0.00%  taskset  [kernel.kallsyms]  [.] visit_groups_merge.constprop.0.isra.0
+     0.00%     0.00%  taskset  [kernel.kallsyms]  [.] merge_sched_in
+     0.00%     0.00%  taskset  [kernel.kallsyms]  [k] nmi_restore
+     0.00%     0.00%  taskset  [kernel.kallsyms]  [k] perf_event_update_userpage
+     0.00%     0.00%  perf-ex  [kernel.kallsyms]  [.] event_sched_in
+     0.00%     0.00%  taskset  [kernel.kallsyms]  [.] event_sched_in
+     0.00%     0.00%  perf-ex  [kernel.kallsyms]  [.] perf_ibs_add
+     0.00%     0.00%  taskset  [kernel.kallsyms]  [.] perf_ibs_add
+     0.00%     0.00%  taskset  [kernel.kallsyms]  [k] __rcu_read_lock
+     0.00%     0.00%  perf-ex  [kernel.kallsyms]  [k] __rcu_read_lock
+
+
+#
+# (Tip: To collect Processor Trace with samples use perf record -e '{intel_pt//,cycles}' ; perf script --call-trace or --insn-trace --xed -F +ipc (remove --xed if no xed))
+#

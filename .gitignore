@@ -1,0 +1,15 @@
+# build outputs
+build/
+
+# large raw perf data (SVG/txt results are kept)
+*.data
+*.data.old
+
+REPORT.md
+
+# third-party tool, restored by `make setup`
+tools/FlameGraph/
+
+# executor scratch
+.superpowers/
+__pycache__/

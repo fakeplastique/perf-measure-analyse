@@ -1,0 +1,1 @@
+system idle: avg_w=21.416 total_j=86.3 j_per_run=86.318
